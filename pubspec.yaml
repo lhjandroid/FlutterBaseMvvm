@@ -1,6 +1,6 @@
 name: base_mvvm
 description: A Flutter mvvm with pure dart, supported both iOS and Android.
-version: 1.0.4
+version: 1.0.5
 author: lihj <lihjcoco@gmail.com>
 homepage: https://github.com/lhjandroid/FlutterBaseMvvm
 
@@ -13,7 +13,7 @@ dependencies:
   dio: ^3.0.7
   dio_cookie_manager: ^1.0.0
   cookie_jar: ^1.0.1
-  rxdart: ^0.21.0 #rx框架
+  rxdart: ^0.22.6 #rx框架
   json_annotation: ^3.0.0
   provider: ^3.2.0 #数据管理层
 
