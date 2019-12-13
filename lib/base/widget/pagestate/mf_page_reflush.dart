@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm/base/widget/anim/fram_aniam_layout.dart';
+import 'package:base_mvvm/base/widget/anim/fram_aniam_layout.dart';
 
 /// 刷新中布局
 class MFPageReflush extends StatelessWidget {

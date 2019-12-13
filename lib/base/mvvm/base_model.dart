@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm/base/network/mf_dio_api.dart';
+import 'package:base_mvvm/base/network/mf_dio_api.dart';
 import 'package:rxdart/rxdart.dart';
 
 class BaseModel {

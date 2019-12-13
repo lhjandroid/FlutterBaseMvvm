@@ -1,8 +1,8 @@
-name: flutter_mvvm
-description: A new Flutter package.
-version: 0.0.1
-author:
-homepage:
+name: base_mvvm
+description: A Flutter mvvm with pure dart, supported both iOS and Android.
+version: 1.0.1
+author: lihj <lihjcoco@gmail.com>
+homepage: https://github.com/lhjandroid/FlutterBaseMvvm
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -10,10 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^2.1.13
+  dio: ^2.2.2
+  cookie_jar: ^1.0.1
   rxdart: ^0.21.0 #rx框架
   json_annotation: ^2.4.0
-  provider: 3.0.0+1 #数据管理层
+  provider: ^3.2.0 #数据管理层
 
 dev_dependencies:
   flutter_test:
@@ -23,6 +24,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
+
 flutter:
 
 # To add assets to your package, add an assets section, like this:

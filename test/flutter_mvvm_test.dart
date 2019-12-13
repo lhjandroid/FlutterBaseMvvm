@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_mvvm/flutter_mvvm.dart';
+import 'package:base_mvvm/flutter_mvvm.dart';
 
 void main() {
   test('adds one to input values', () {

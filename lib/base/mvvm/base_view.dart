@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm/base/utils/common_util.dart';
+import 'package:base_mvvm/base/utils/common_util.dart';
 import 'package:provider/provider.dart';
 
 import 'base_view_model.dart';
@@ -87,7 +87,7 @@ class BaseViewState<T extends BaseViewModel> extends State<BaseView> {
 
   /// 构造页面内容
   List<Widget> createPageView(Widget contentView) {
-    List widgets = List();
+    List<Widget> widgets = List();
     widgets.add(contentView);
     if (_iView?.canLoading()) {
       // 加载中页面

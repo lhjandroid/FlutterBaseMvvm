@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:cookie_jar/cookie_jar.dart';
-import 'package:flutter_mvvm/base/config/config.dart';
+import 'package:base_mvvm/base/config/config.dart';
 
 import 'mf_api_service.dart';
 
