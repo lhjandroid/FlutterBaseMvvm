@@ -1,8 +1,10 @@
 import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:cookie_jar/cookie_jar.dart';
+import 'package:dio/adapter.dart';
+import 'package:dio/dio.dart';
 import 'package:base_mvvm/base/config/config.dart';
+import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 
 import 'mf_api_service.dart';
 
@@ -31,7 +33,7 @@ class MFDioApi {
         "version": "1.0.0",
       },
       //请求的Content-Type
-      contentType: ContentType.json,
+      contentType: Headers.jsonContentType,
       //表示期望以那种格式(方式)接受响应数据。接受三种类型 `json`, `stream`, `plain`, `bytes`. 默认值是 `json`,
       responseType: ResponseType.plain,
     );
