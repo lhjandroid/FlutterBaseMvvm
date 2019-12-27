@@ -5,7 +5,7 @@ A new Flutter package.
 ## Getting Started
 
 dependencies:
-  base_mvvm: ^1.0.5
+  base_mvvm: ^1.0.7
   
 view
   ```
