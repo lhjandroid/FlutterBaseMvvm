@@ -1,4 +1,4 @@
-## [1.0.5] - TODO: Add release date.
+## [1.0.7] - TODO: Add release date.
 
 * TODO: Describe initial release.
 依赖库升级到最新版本
