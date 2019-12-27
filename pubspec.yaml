@@ -1,6 +1,6 @@
 name: base_mvvm
 description: A Flutter mvvm with pure dart, supported both iOS and Android.
-version: 1.0.5
+version: 1.0.6
 author: lihj <lihjcoco@gmail.com>
 homepage: https://github.com/lhjandroid/FlutterBaseMvvm
 

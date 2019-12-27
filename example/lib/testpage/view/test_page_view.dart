@@ -43,14 +43,4 @@ class TestPageView extends BaseView<TestViewModel> {
     return TestViewModel();
   }
 
-  @override
-  Widget createLoadingPageView() {
-
-    return null;
-  }
-
-  @override
-  bool canLoading() {
-    return false;
-  }
 }

@@ -5,13 +5,13 @@ import 'config/anim_config.dart';
 /// 动画封装布局
 class MFAnimLayout<T> extends StatefulWidget {
   // 动画属性
-  AnimConfig config;
+  final AnimConfig config;
 
   // 动画布局
-  Widget Function(T valu)builder;
+  final Widget Function(T valu)builder;
 
   // 动画
-  Animatable animatable;
+  final Animatable animatable;
 
   MFAnimLayout({this.config, this.animatable, this.builder});
 

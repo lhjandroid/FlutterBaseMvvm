@@ -4,13 +4,12 @@ import 'package:base_mvvm/base/widget/anim/fram_aniam_layout.dart';
 /// 刷新中布局
 class MFPageReflush extends StatelessWidget {
 
-  List<String> _paths;
+  final List<String> _paths;
+
+  MFPageReflush(this._paths);
 
   @override
   Widget build(BuildContext context) {
-
-    _paths = List();
-    _paths.add('your image');
 
     return Container(
       color: Colors.white,

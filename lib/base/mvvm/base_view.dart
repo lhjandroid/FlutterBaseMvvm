@@ -5,10 +5,13 @@ import 'package:provider/provider.dart';
 import 'base_view_model.dart';
 
 /// view基础类
+// ignore: must_be_immutable
 abstract class BaseView<T extends BaseViewModel> extends StatefulWidget
     implements IView {
   /// viewModel
   T viewModel;
+
+  BaseView();
 
   @override
   State<StatefulWidget> createState() {
@@ -45,7 +48,7 @@ abstract class BaseView<T extends BaseViewModel> extends StatefulWidget
   }
 
   /// 构造加载中页面
-  Widget createLoadingView() {
+  Widget createLoadingPageView() {
     return null;
   }
 
@@ -89,7 +92,8 @@ class BaseViewState<T extends BaseViewModel> extends State<BaseView> {
   List<Widget> createPageView(Widget contentView) {
     List<Widget> widgets = List();
     widgets.add(contentView);
-    if (_iView?.canLoading()) {
+    bool canLoading = _iView == null ? false : _iView.canLoading();
+    if (canLoading) {
       // 加载中页面
       Widget loadingView = createStateView(_iView?.createLoadingPageView(), PageState.loading);
       if (loadingView != null) {
@@ -122,7 +126,7 @@ class BaseViewState<T extends BaseViewModel> extends State<BaseView> {
   List<ChangeNotifierProvider> createProviders() {
     List<ChangeNotifierProvider> providers = List();
     var baseProvider = ChangeNotifierProvider(
-      builder: (context) => _viewModel,
+      create: (context) => _viewModel,
     );
     providers.add(baseProvider);
     if (!CommonUtil.isEmpt(_providers)) {

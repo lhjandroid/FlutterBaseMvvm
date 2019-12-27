@@ -32,7 +32,6 @@ class MFApiService<T> {
     Map<String, T> param;
 
     param = Map.castFrom(await _getParamUrl());
-
     dio.lock();
     _addCommon(data).then((value) {
       data = value;
