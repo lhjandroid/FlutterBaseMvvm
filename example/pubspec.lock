@@ -28,7 +28,7 @@ packages:
       path: "/Users/lihongjun/StudioProjects/flutter_mvvm"
       relative: false
     source: path
-    version: "1.0.7"
+    version: "1.0.9"
   boolean_selector:
     dependency: transitive
     description:
