@@ -5,18 +5,28 @@ class TestViewModel extends BaseViewModel {
 
   int _num;
   TestModel _testModel;
+  String htmlText;
 
   TestViewModel() {
     _testModel = TestModel();
   }
 
   void getNum() {
-    excute(_testModel.getNumber(), (data)=> {
-      setNum(data)
+    execute(_testModel.getNumber(), (data) {
+      setNum(data);
     });
   }
 
-  setNum(int data) {
+  void getBaidu() {
+    execute(_testModel.getHtmlText(), (event) {
+      this.htmlText = event;
+      notifyListeners();
+    },onError: (e) {
+      print(e);
+    });
+  }
+
+  void setNum(int data) {
     _num = data;
     notifyListeners();
   }

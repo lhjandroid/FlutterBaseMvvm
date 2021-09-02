@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:rxdart/rxdart.dart';
 
 class MFApiService<T> {
@@ -8,9 +9,9 @@ class MFApiService<T> {
   MFApiService(this.dio);
 
   //get请求结构
-  Future _get(String url, {data, options, cancelToken}) async {
+  Future _get(String url, {data, options, cancelToken,needJson = false}) async {
     Response response;
-    Map<String, dynamic> map;
+    var map;
 
     try {
       response = await dio.get(url,
@@ -18,10 +19,10 @@ class MFApiService<T> {
     } on DioError catch (e) {
       formatError(e);
     }
-    try {
+    if (needJson) {
       map = json.decode(response.data);
-    } catch (e) {
-
+    } else {
+      map = response.data;
     }
     return map;
   }
@@ -54,12 +55,12 @@ class MFApiService<T> {
     return map;
   }
 
-  Observable post(url, {data, options, cancelToken, ignoreTDK: false}) =>
-      Observable.fromFuture(_post(url,cancelToken: cancelToken,options: options)).asBroadcastStream();
+  Stream post(url, {data, options, cancelToken, ignoreTDK: false}) =>
+      Stream.fromFuture(_post(url,cancelToken: cancelToken,options: options));
 
 
-  Observable get(String url, {data, options, cancelToken}) =>
-      Observable.fromFuture(_get(url, options: options,cancelToken: cancelToken)).asBroadcastStream();
+  Stream get(String url, {data, options, cancelToken,needJson = true}) =>
+      Stream.fromFuture(_get(url, options: options,cancelToken: cancelToken,needJson: needJson));
 
 
   // POST请求追加公共参数

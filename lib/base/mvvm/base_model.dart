@@ -1,15 +1,28 @@
-import 'package:base_mvvm/base/network/mf_dio_api.dart';
-import 'package:rxdart/rxdart.dart';
 
-class BaseModel {
+import 'package:base_mvvm/base/network/mf_dio_api.dart';
+import 'package:dio/dio.dart';
+
+/// 网络请求相关
+class BaseService {
 
   /// post请求
-  Observable post(String url,{Map<String, dynamic> param}) {
-    return MFDioApi.getInstance().post(url,data: param);
+  Stream post(String url,{
+    dynamic param,
+    Options options,
+    CancelToken cancelToken,
+    bool ignoreTDK: false,
+  }) {
+    return MFDioApi.getInstance().post(url,data: param,options: options);
   }
 
   /// get请求
-  Observable get(String url,{Map<String, dynamic> param}) {
-    return MFDioApi.getInstance().get(url,data: param);
+  Stream get(String url,{
+    dynamic param,
+    Options options,
+    CancelToken cancelToken,
+    bool ignoreTDK: false,
+    bool needJson: true,
+  }) {
+    return MFDioApi.getInstance().get(url,data: param,options: options,needJson: needJson);
   }
 }

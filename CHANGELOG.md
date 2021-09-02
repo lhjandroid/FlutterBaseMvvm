@@ -1,3 +1,6 @@
+## [2.0.0]
+全新的使用方式
+
 ## [1.0.9] - TODO: Add release date.
 
 * TODO: Describe initial release.
